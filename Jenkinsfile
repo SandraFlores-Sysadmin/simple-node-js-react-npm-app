@@ -9,7 +9,11 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install' 
-                sh 'jenkins/scripts/test.sh' 
+            }
+	}
+	stage('scp') {    
+	    steps {	
+		sh 'jenkins/scripts/test.sh' 
             }
         }
     }
